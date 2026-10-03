@@ -1,12 +1,15 @@
 # Teka-Teki Silang (TTS) Interaktif PPKn Perguruan Tinggi
 ### Berbasis Pendekatan *Value Clarification Technique* (VCT)
 
+[![Live Demo](https://img.shields.io/badge/Demo%20Online-Buka%20Aplikasi-059669?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mariofahmi.github.io/TTS-VCT-PPKN/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-mariofahmi%2FTTS--VCT--PPKN-0284c7?style=for-the-badge&logo=github)](https://github.com/mariofahmi/TTS-VCT-PPKN)
 [![Perancang](https://img.shields.io/badge/PERANCANG-MARIO%20FAHMI%20SYAHRIAL-0ea5e9?style=for-the-badge)](https://github.com/mariofahmi)
 [![Framework](https://img.shields.io/badge/React%2019-Vite%208-38bdf8?style=for-the-badge&logo=react)](https://vitejs.dev/)
 [![Tema](https://img.shields.io/badge/Tema-Biru%20Muda%20Laut%20%26%20Malam-06b6d4?style=for-the-badge)](https://github.com/mariofahmi/TTS-VCT-PPKN)
 
 Aplikasi media pembelajaran interaktif berbasis web (*Single Viewport Web Application*) yang mengintegrasikan permainan Teka-Teki Silang (TTS) dengan model pembelajaran klarifikasi nilai (*Value Clarification Technique* / VCT) untuk mata kuliah Pendidikan Pancasila dan Kewarganegaraan (PPKn) di Perguruan Tinggi.
+
+🔗 **Link Akses Online:** [https://mariofahmi.github.io/TTS-VCT-PPKN/](https://mariofahmi.github.io/TTS-VCT-PPKN/)
 
 ---
 
