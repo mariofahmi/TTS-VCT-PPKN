@@ -15,6 +15,7 @@ import { PrintWorksheetModal } from './components/PrintWorksheetModal.tsx';
 import { TheoryInsightModal } from './components/TheoryInsightModal.tsx';
 import { PlayerProfileModal, PlayerProfile } from './components/PlayerProfileModal.tsx';
 import { sound } from './utils/audio.ts';
+import logoMf from './assets/logo-mf.png';
 import { 
   CheckCircle, 
   Lightbulb, 
@@ -488,7 +489,7 @@ export default function App() {
     <div
       className={`min-h-screen flex flex-col font-sans transition-colors ${
         isOcean
-          ? 'bg-gradient-to-br from-sky-100 via-cyan-50 to-blue-100 text-slate-800 selection:bg-sky-500 selection:text-white'
+          ? 'bg-gradient-to-br from-[#0c2b55] via-[#071f3f] to-[#031124] text-slate-100 selection:bg-sky-500 selection:text-white'
           : 'bg-slate-950 text-slate-100 selection:bg-amber-500/30 selection:text-amber-200'
       }`}
     >
@@ -513,7 +514,7 @@ export default function App() {
       <div
         className={`border-b px-3 sm:px-6 py-2 shrink-0 transition-colors ${
           isOcean
-            ? 'bg-white/75 backdrop-blur-md border-sky-200/80 shadow-sm'
+            ? 'bg-[#061833]/90 backdrop-blur-md border-sky-400/25 shadow-md shadow-sky-950/40'
             : 'bg-slate-900/95 border-slate-800/80'
         }`}
       >
@@ -522,10 +523,10 @@ export default function App() {
           <div className="flex items-center gap-1 overflow-x-auto py-0.5 max-w-full">
             <span
               className={`text-[11px] font-bold mr-1 shrink-0 flex items-center gap-1 ${
-                isOcean ? 'text-sky-800' : 'text-slate-400'
+                isOcean ? 'text-sky-300' : 'text-slate-400'
               }`}
             >
-              <Layers className={`w-3.5 h-3.5 ${isOcean ? 'text-sky-600' : 'text-amber-400'}`} />
+              <Layers className={`w-3.5 h-3.5 ${isOcean ? 'text-sky-400' : 'text-amber-400'}`} />
               <span>Tipe:</span>
             </span>
 
@@ -544,20 +545,20 @@ export default function App() {
                   className={`px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all shrink-0 cursor-pointer flex items-center gap-1 border ${
                     isSelected
                       ? isOcean
-                        ? 'bg-gradient-to-r from-sky-500 to-cyan-500 text-white border-sky-400 shadow-md shadow-sky-500/25 scale-105'
+                        ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white border-sky-300 shadow-md shadow-sky-500/40 scale-105'
                         : 'bg-amber-400 text-slate-950 border-amber-400 shadow-sm scale-105'
                       : stats?.completed
                       ? isOcean
-                        ? 'bg-teal-50 text-teal-800 border-teal-300 hover:bg-teal-100'
+                        ? 'bg-teal-900/60 text-teal-200 border-teal-400/50 hover:bg-teal-800'
                         : 'bg-emerald-950/40 text-emerald-300 border-emerald-500/40 hover:bg-slate-800'
                       : isOcean
-                      ? 'bg-white/90 text-sky-950 border-sky-200 hover:bg-sky-50 hover:text-sky-700'
+                      ? 'bg-sky-900/50 text-sky-200 border-sky-500/30 hover:bg-sky-800 hover:text-white'
                       : 'bg-slate-800/70 text-slate-300 border-slate-700/80 hover:bg-slate-700 hover:text-white'
                   }`}
                 >
                   <span>#{p.typeNumber}</span>
                   {stats?.completed && (
-                    <CheckCircle className={`w-3 h-3 ${isOcean ? 'text-teal-600' : 'text-emerald-400'}`} />
+                    <CheckCircle className={`w-3 h-3 ${isOcean ? 'text-teal-300' : 'text-emerald-400'}`} />
                   )}
                 </button>
               );
@@ -571,7 +572,7 @@ export default function App() {
               onClick={() => { setActiveOverlayTab('verify'); sound.playTap(); }}
               className={`px-2.5 py-1 rounded-lg font-semibold cursor-pointer transition-colors flex items-center gap-1 border ${
                 isOcean
-                  ? 'bg-teal-500/15 hover:bg-teal-500/25 text-teal-800 border-teal-300'
+                  ? 'bg-teal-500/20 hover:bg-teal-500/30 text-teal-200 border-teal-400/40'
                   : 'bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border-emerald-500/30'
               }`}
             >
@@ -584,7 +585,7 @@ export default function App() {
               onClick={() => { setActiveOverlayTab('pedagogy'); sound.playTap(); }}
               className={`px-2.5 py-1 rounded-lg font-semibold cursor-pointer transition-colors flex items-center gap-1 border ${
                 isOcean
-                  ? 'bg-sky-500/15 hover:bg-sky-500/25 text-sky-800 border-sky-300'
+                  ? 'bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 border-sky-400/40'
                   : 'bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border-blue-500/30'
               }`}
             >
@@ -597,7 +598,7 @@ export default function App() {
               onClick={() => { setActiveOverlayTab('glossary'); sound.playTap(); }}
               className={`px-2.5 py-1 rounded-lg font-semibold cursor-pointer transition-colors flex items-center gap-1 border ${
                 isOcean
-                  ? 'bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-800 border-cyan-300'
+                  ? 'bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border-cyan-400/40'
                   : 'bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 border-amber-500/30'
               }`}
             >
@@ -614,7 +615,7 @@ export default function App() {
         <div
           className={`rounded-2xl border px-3.5 py-2 shadow-sm flex flex-wrap items-center justify-between gap-2.5 mb-2.5 shrink-0 transition-colors ${
             isOcean
-              ? 'bg-white/90 backdrop-blur-md border-sky-200 text-slate-800 shadow-sky-900/5'
+              ? 'bg-[#061e40]/90 backdrop-blur-md border-sky-400/35 text-sky-100 shadow-md shadow-sky-950/40'
               : 'bg-slate-900/90 border-slate-800 text-slate-100'
           }`}
         >
@@ -626,7 +627,7 @@ export default function App() {
               title="Level Sebelumnya"
               className={`p-1 rounded-md transition-colors cursor-pointer ${
                 isOcean
-                  ? 'bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200'
+                  ? 'bg-sky-900/60 hover:bg-sky-800 text-sky-200 border border-sky-500/30'
                   : 'bg-slate-800 hover:bg-slate-700 text-slate-300'
               }`}
             >
@@ -636,14 +637,14 @@ export default function App() {
             <div>
               <span
                 className={`text-xs font-black tracking-tight mr-1.5 ${
-                  isOcean ? 'text-slate-950' : 'text-white'
+                  isOcean ? 'text-white' : 'text-white'
                 }`}
               >
                 Tipe #{currentPuzzle.typeNumber}: {currentPuzzle.title}
               </span>
               <span
                 className={`text-[10px] font-medium hidden md:inline ${
-                  isOcean ? 'text-sky-600' : 'text-amber-400/90'
+                  isOcean ? 'text-sky-300' : 'text-amber-400/90'
                 }`}
               >
                 ({currentPuzzle.subtitle})
@@ -656,7 +657,7 @@ export default function App() {
               title="Level Selanjutnya"
               className={`p-1 rounded-md transition-colors cursor-pointer ${
                 isOcean
-                  ? 'bg-sky-50 hover:bg-sky-100 text-sky-800 border border-sky-200'
+                  ? 'bg-sky-900/60 hover:bg-sky-800 text-sky-200 border border-sky-500/30'
                   : 'bg-slate-800 hover:bg-slate-700 text-slate-300'
               }`}
             >
@@ -669,12 +670,12 @@ export default function App() {
             <div
               className={`flex items-center gap-1 px-2 py-1 rounded-lg border ${
                 isOcean
-                  ? 'bg-sky-50/90 border-sky-200 text-sky-900'
+                  ? 'bg-sky-900/50 border-sky-400/30 text-sky-100'
                   : 'bg-slate-950/70 border-slate-800'
               }`}
             >
-              <Trophy className="w-3.5 h-3.5 text-amber-500" />
-              <span className={`font-mono font-bold ${isOcean ? 'text-sky-700' : 'text-amber-300'}`}>
+              <Trophy className="w-3.5 h-3.5 text-amber-400" />
+              <span className={`font-mono font-bold ${isOcean ? 'text-amber-300' : 'text-amber-300'}`}>
                 {score}
               </span>
             </div>
@@ -682,22 +683,22 @@ export default function App() {
             <div
               className={`flex items-center gap-1 px-2 py-1 rounded-lg border ${
                 isOcean
-                  ? 'bg-sky-50/90 border-sky-200 text-slate-700'
+                  ? 'bg-sky-900/50 border-sky-400/30 text-sky-100'
                   : 'bg-slate-950/70 border-slate-800 text-white'
               }`}
             >
-              <TimerIcon className="w-3.5 h-3.5 text-slate-400" />
+              <TimerIcon className="w-3.5 h-3.5 text-sky-300" />
               <span className="font-mono font-bold">{formatTimer(timerSeconds)}</span>
             </div>
 
             <div
               className={`flex items-center gap-1 px-2 py-1 rounded-lg border ${
                 isOcean
-                  ? 'bg-teal-50/90 border-teal-200 text-teal-800'
+                  ? 'bg-teal-900/50 border-teal-400/30 text-teal-200'
                   : 'bg-slate-950/70 border-slate-800 text-emerald-300'
               }`}
             >
-              <CheckCircle className={`w-3.5 h-3.5 ${isOcean ? 'text-teal-600' : 'text-emerald-400'}`} />
+              <CheckCircle className={`w-3.5 h-3.5 ${isOcean ? 'text-teal-300' : 'text-emerald-400'}`} />
               <span className="font-mono font-bold">
                 {completedWordIds.size} / {currentPuzzle.words.length}
               </span>
@@ -707,11 +708,11 @@ export default function App() {
               <div
                 className={`hidden sm:flex items-center gap-1 px-2 py-0.5 rounded-lg text-[10px] font-bold ${
                   isOcean
-                    ? 'bg-amber-100 text-amber-800 border border-amber-300'
+                    ? 'bg-amber-400/20 text-amber-300 border border-amber-400/40'
                     : 'bg-amber-500/20 text-amber-300'
                 }`}
               >
-                <Flame className="w-3 h-3 text-amber-500" />
+                <Flame className="w-3 h-3 text-amber-400" />
                 <span>{streak}x</span>
               </div>
             )}
@@ -731,7 +732,7 @@ export default function App() {
                   showLecturerKey
                     ? 'bg-blue-600 text-white border-blue-500 shadow'
                     : isOcean
-                    ? 'bg-sky-50 hover:bg-sky-100 text-blue-700 border-blue-200'
+                    ? 'bg-sky-900/60 hover:bg-sky-800 text-sky-200 border-sky-400/40'
                     : 'bg-slate-800 hover:bg-slate-700 text-blue-300 border-blue-500/40'
                 }`}
               >
@@ -745,11 +746,11 @@ export default function App() {
               onClick={handleCheckErrors}
               className={`px-2.5 py-1 text-xs font-semibold rounded-lg border transition-colors cursor-pointer flex items-center gap-1 ${
                 isOcean
-                  ? 'bg-sky-50 hover:bg-sky-100 text-slate-700 border-sky-200'
+                  ? 'bg-sky-900/60 hover:bg-sky-800 text-sky-200 border-sky-400/40'
                   : 'bg-slate-800 hover:bg-slate-700 text-slate-200 border-slate-700'
               }`}
             >
-              <Eye className={`w-3 h-3 ${isOcean ? 'text-sky-600' : 'text-slate-400'}`} />
+              <Eye className={`w-3 h-3 ${isOcean ? 'text-sky-300' : 'text-slate-400'}`} />
               <span>Cek</span>
             </button>
 
@@ -760,10 +761,10 @@ export default function App() {
               className={`px-2.5 py-1 text-xs font-semibold rounded-lg border transition-colors cursor-pointer flex items-center gap-1 ${
                 selectedCell
                   ? isOcean
-                    ? 'bg-sky-500/15 hover:bg-sky-500/25 text-sky-800 border-sky-300 font-bold'
+                    ? 'bg-sky-500/30 hover:bg-sky-500/50 text-white border-sky-300 font-bold shadow-sm'
                     : 'bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border-amber-500/50'
                   : isOcean
-                  ? 'bg-slate-100 text-slate-400 border-slate-200 cursor-not-allowed'
+                  ? 'bg-sky-950/40 text-sky-500/40 border-sky-900/40 cursor-not-allowed'
                   : 'bg-slate-800/40 text-slate-600 border-slate-800 cursor-not-allowed'
               }`}
             >
@@ -777,7 +778,7 @@ export default function App() {
               title="Cetak Lembar Kerja Mahasiswa / Dosen (PDF)"
               className={`px-2.5 py-1 text-xs font-bold rounded-lg border transition-colors cursor-pointer flex items-center gap-1 ${
                 isOcean
-                  ? 'bg-teal-500/20 hover:bg-teal-500/30 text-teal-800 border-teal-300'
+                  ? 'bg-sky-900/60 hover:bg-sky-800 text-sky-200 border-sky-400/40'
                   : 'bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border-emerald-500/40'
               }`}
             >
@@ -790,9 +791,9 @@ export default function App() {
         {/* Active Clue Callout Banner */}
         {selectedWord && (
           <div
-            className={`p-2 rounded-xl border shadow-sm flex items-center justify-between gap-2.5 mb-2.5 shrink-0 transition-colors ${
+            className={`p-2.5 rounded-xl border shadow-lg flex items-center justify-between gap-2.5 mb-2.5 shrink-0 transition-colors ${
               isOcean
-                ? 'bg-gradient-to-r from-sky-500/15 via-cyan-500/10 to-teal-500/15 border-sky-300 shadow-sky-900/5'
+                ? 'bg-gradient-to-r from-[#0369a1] via-[#0284c7] to-[#075985] border-sky-300/40 shadow-sky-950/50 text-white'
                 : 'bg-gradient-to-r from-amber-950/30 via-slate-900 to-slate-900 border-amber-500/40'
             }`}
           >
@@ -800,7 +801,7 @@ export default function App() {
               <div
                 className={`w-6 h-6 rounded-md font-black font-mono text-xs flex items-center justify-center shrink-0 shadow-sm ${
                   isOcean
-                    ? 'bg-gradient-to-br from-sky-500 to-cyan-600 text-white'
+                    ? 'bg-white text-sky-900'
                     : 'bg-amber-400 text-slate-950'
                 }`}
               >
@@ -810,20 +811,20 @@ export default function App() {
                 <div className="flex items-center gap-2 text-[10px]">
                   <span
                     className={`font-bold uppercase tracking-wider ${
-                      isOcean ? 'text-sky-700' : 'text-amber-400'
+                      isOcean ? 'text-sky-200' : 'text-amber-400'
                     }`}
                   >
                     {selectedWord.direction === 'across' ? 'Mendatar' : 'Menurun'} ({selectedWord.word.length} Huruf)
                   </span>
-                  <span className={isOcean ? 'text-slate-300' : 'text-slate-600'}>·</span>
-                  <span className={`text-[10px] truncate flex items-center gap-1 ${isOcean ? 'text-slate-500' : 'text-slate-400'}`}>
-                    <BookOpen className={`w-3 h-3 shrink-0 ${isOcean ? 'text-sky-600' : 'text-amber-400/80'}`} />
+                  <span className={isOcean ? 'text-sky-300/60' : 'text-slate-600'}>·</span>
+                  <span className={`text-[10px] truncate flex items-center gap-1 ${isOcean ? 'text-sky-200' : 'text-slate-400'}`}>
+                    <BookOpen className={`w-3 h-3 shrink-0 ${isOcean ? 'text-sky-200' : 'text-amber-400/80'}`} />
                     {selectedWord.bookRef}
                   </span>
                 </div>
                 <p
                   className={`text-xs font-semibold truncate mt-0.5 ${
-                    isOcean ? 'text-slate-900' : 'text-slate-100'
+                    isOcean ? 'text-white' : 'text-slate-100'
                   }`}
                 >
                   {selectedWord.clue}
@@ -838,13 +839,13 @@ export default function App() {
                 sound.playTap();
               }}
               title="Lihat Rujukan Teori Buku & Taksonomi"
-              className={`px-2 py-1 rounded-lg border text-[10px] font-bold flex items-center gap-1 cursor-pointer shrink-0 transition-colors ${
+              className={`px-2.5 py-1 rounded-lg border text-[10px] font-bold flex items-center gap-1 cursor-pointer shrink-0 transition-colors ${
                 isOcean
-                  ? 'bg-sky-500/15 hover:bg-sky-500/25 border-sky-300 text-sky-800'
+                  ? 'bg-white/20 hover:bg-white/30 border-white/40 text-white shadow-sm'
                   : 'bg-amber-500/15 hover:bg-amber-500/25 border-amber-500/40 text-amber-300'
               }`}
             >
-              <GraduationCap className={`w-3.5 h-3.5 ${isOcean ? 'text-sky-600' : 'text-amber-400'}`} />
+              <GraduationCap className={`w-3.5 h-3.5 ${isOcean ? 'text-white' : 'text-amber-400'}`} />
               <span>Kajian Teori</span>
             </button>
           </div>
@@ -872,13 +873,13 @@ export default function App() {
             <div
               className={`p-2 rounded-xl border text-[11px] italic flex items-start gap-2 shadow-inner transition-colors ${
                 isOcean
-                  ? 'bg-white/80 border-sky-200 text-slate-700'
+                  ? 'bg-[#061c3b]/80 border-sky-400/30 text-sky-200'
                   : 'bg-slate-900/60 border-slate-800 text-slate-300'
               }`}
             >
-              <Info className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${isOcean ? 'text-sky-600' : 'text-amber-400'}`} />
+              <Info className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${isOcean ? 'text-sky-400' : 'text-amber-400'}`} />
               <div className="line-clamp-2">
-                <span className={`font-semibold not-italic mr-1 ${isOcean ? 'text-slate-900' : 'text-slate-200'}`}>
+                <span className={`font-semibold not-italic mr-1 ${isOcean ? 'text-sky-300' : 'text-slate-200'}`}>
                   Rujukan Buku:
                 </span>
                 {currentPuzzle.quote}
@@ -920,7 +921,7 @@ export default function App() {
       <footer
         className={`mt-auto border-t py-2.5 px-4 text-center transition-colors ${
           isOcean
-            ? 'border-sky-200/80 bg-white/85 backdrop-blur-md text-slate-700'
+            ? 'border-sky-500/30 bg-[#051730]/95 backdrop-blur-md text-sky-200 shadow-md'
             : 'border-slate-800/80 bg-slate-950/95 text-slate-400'
         }`}
       >
@@ -929,20 +930,23 @@ export default function App() {
             <div
               className={`w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center shrink-0 border transition-all ${
                 isOcean
-                  ? 'bg-white border-sky-300 shadow-sm ring-1 ring-sky-400/40'
+                  ? 'bg-white/10 border-sky-400 shadow-sm ring-1 ring-sky-400/50'
                   : 'bg-white/10 border-amber-500/40 shadow-sm ring-1 ring-amber-400/30'
               }`}
             >
               <img
-                src="/logo-mf.png"
+                src={logoMf}
                 alt="Logo MF"
                 className="w-full h-full object-contain p-0.5"
+                onError={(e) => {
+                  e.currentTarget.src = './logo-mf.png';
+                }}
               />
             </div>
             <span
               className={`px-3 py-1 rounded-lg font-black tracking-wider text-xs border shadow-sm ${
                 isOcean
-                  ? 'bg-gradient-to-r from-sky-500/20 to-cyan-500/20 text-sky-800 border-sky-300'
+                  ? 'bg-gradient-to-r from-sky-500/25 to-blue-600/25 text-sky-100 border-sky-400/50 shadow-md'
                   : 'bg-amber-500/20 text-amber-300 border-amber-500/30'
               }`}
             >
@@ -955,7 +959,7 @@ export default function App() {
               title="Repositori GitHub Resmi TTS-VCT-PPKN"
               className={`px-2.5 py-1 rounded-lg text-xs font-semibold border transition-all flex items-center gap-1.5 shadow-sm group ${
                 isOcean
-                  ? 'bg-sky-50 hover:bg-sky-100 text-sky-900 border-sky-300 hover:border-sky-500'
+                  ? 'bg-sky-900/60 hover:bg-sky-800 text-sky-100 border-sky-400/40 hover:border-sky-300'
                   : 'bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white border-slate-700 hover:border-amber-500/50'
               }`}
             >
@@ -963,7 +967,7 @@ export default function App() {
               <span className="font-mono text-[11px]">mariofahmi/TTS-VCT-PPKN</span>
             </a>
           </div>
-          <div className={`text-[11px] ${isOcean ? 'text-slate-500' : 'text-slate-400'}`}>
+          <div className={`text-[11px] ${isOcean ? 'text-sky-300/70' : 'text-slate-400'}`}>
             Sumber Rujukan: <em>Value Clarification Technique (VCT) dalam Pembelajaran PPKn Berbasis Nilai</em> · Yudharta Press (2026, ISBN: 978-623-7817-62-8)
           </div>
         </div>

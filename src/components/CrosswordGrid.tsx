@@ -81,7 +81,7 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
     <div
       className={`w-full flex flex-col items-center justify-center p-2 sm:p-2.5 rounded-2xl border shadow-xl transition-colors ${
         isOcean
-          ? 'bg-white/90 backdrop-blur-md border-sky-200/90 shadow-sky-900/5'
+          ? 'bg-[#061c3b]/90 backdrop-blur-md border-sky-400/35 shadow-xl shadow-sky-950/60'
           : 'bg-slate-900/90 border-slate-800 shadow-xl'
       }`}
     >
@@ -89,7 +89,7 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
       <div
         className={`grid gap-[3px] sm:gap-1 p-1.5 sm:p-2 rounded-xl border select-none transition-colors ${
           isOcean
-            ? 'bg-sky-950/85 border-sky-800/80 shadow-2xl'
+            ? 'bg-[#030f20]/95 border-sky-500/40 shadow-2xl'
             : 'bg-slate-950 border-slate-800 shadow-2xl'
         }`}
         style={{
@@ -117,7 +117,7 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
                   key={key}
                   className={`w-6 h-6 sm:w-7.5 sm:h-7.5 md:w-8 md:h-8 rounded ${
                     isOcean
-                      ? 'bg-sky-950/90 border border-sky-900/60'
+                      ? 'bg-[#020b18]/90 border border-sky-950/60'
                       : 'bg-slate-950/90 border border-slate-900/60'
                   }`}
                   aria-hidden="true"
@@ -133,11 +133,11 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
                 className={`w-6 h-6 sm:w-7.5 sm:h-7.5 md:w-8 md:h-8 relative flex items-center justify-center rounded-md font-bold font-mono text-xs sm:text-sm md:text-base transition-all duration-100 cursor-pointer focus:outline-none ${
                   isSelected
                     ? isOcean
-                      ? 'bg-sky-400 text-white ring-2 sm:ring-3 ring-sky-400/80 shadow-lg scale-105 z-20 font-black'
+                      ? 'bg-sky-400 text-slate-950 ring-2 sm:ring-3 ring-sky-300 shadow-lg scale-105 z-20 font-black'
                       : 'bg-amber-400 text-slate-950 ring-2 sm:ring-3 ring-amber-400/60 shadow-lg scale-105 z-20 font-black'
                     : isInActiveWord
                     ? isOcean
-                      ? 'bg-cyan-100 text-cyan-950 border border-cyan-400 z-10 font-bold'
+                      ? 'bg-sky-200 text-sky-950 border border-sky-400 z-10 font-bold'
                       : 'bg-amber-500/25 text-amber-200 border border-amber-500/80 z-10'
                     : isComplete
                     ? 'bg-teal-50 text-teal-900 border border-teal-400'
@@ -147,10 +147,10 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
                     ? 'bg-blue-100 text-blue-900 border border-blue-500 font-black'
                     : currentLetter
                     ? isOcean
-                      ? 'bg-white text-sky-950 border border-sky-300 hover:border-sky-400 font-bold'
+                      ? 'bg-white text-slate-950 border border-sky-300 hover:border-sky-400 font-bold'
                       : 'bg-slate-800 text-white border border-slate-700 hover:border-slate-500'
                     : isOcean
-                    ? 'bg-white text-slate-800 border border-sky-200 hover:bg-sky-50 hover:border-sky-300 font-semibold'
+                    ? 'bg-white text-slate-950 border border-sky-200 hover:border-sky-400 font-bold'
                     : 'bg-slate-900 text-slate-300 border border-slate-800 hover:bg-slate-800 hover:border-slate-700'
                 }`}
               >
@@ -159,7 +159,7 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
                   <span
                     className={`absolute top-0.5 left-0.5 text-[7px] sm:text-[9px] font-mono leading-none font-bold ${
                       isSelected
-                        ? isOcean ? 'text-white' : 'text-slate-950'
+                        ? isOcean ? 'text-slate-950 font-black' : 'text-slate-950'
                         : isOcean ? 'text-sky-700' : 'text-slate-400'
                     }`}
                   >
@@ -183,7 +183,7 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
       {/* Grid Footnote Helper */}
       <div
         className={`w-full flex items-center justify-between text-[10px] mt-1.5 px-1 ${
-          isOcean ? 'text-slate-600' : 'text-slate-400'
+          isOcean ? 'text-sky-300/80' : 'text-slate-400'
         }`}
       >
         <span className="truncate">
@@ -191,7 +191,7 @@ export const CrosswordGrid: React.FC<CrosswordGridProps> = ({
         </span>
         <span
           className={`font-mono font-bold shrink-0 ml-2 ${
-            isOcean ? 'text-sky-700' : 'text-amber-400/90'
+            isOcean ? 'text-sky-300' : 'text-amber-400/90'
           }`}
         >
           {puzzle.rows}x{puzzle.cols}

@@ -3,6 +3,7 @@ import { Puzzle, WordItem } from '../data/types.ts';
 import { Printer, X, FileText, CheckCircle2, BookOpen, GraduationCap, ShieldCheck, Download } from 'lucide-react';
 import { sound } from '../utils/audio.ts';
 import { PlayerProfile } from './PlayerProfileModal.tsx';
+import logoMf from '../assets/logo-mf.png';
 
 interface PrintWorksheetModalProps {
   puzzle: Puzzle;
@@ -171,9 +172,12 @@ export const PrintWorksheetModal: React.FC<PrintWorksheetModalProps> = ({
               <div className="flex items-start gap-3.5">
                 <div className="w-14 h-14 rounded-xl border border-slate-300 p-1 flex items-center justify-center shrink-0 bg-slate-50">
                   <img
-                    src="/logo-mf.png"
+                    src={logoMf}
                     alt="Logo MF"
                     className="w-full h-full object-contain"
+                    onError={(e) => {
+                      e.currentTarget.src = './logo-mf.png';
+                    }}
                   />
                 </div>
                 <div>

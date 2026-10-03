@@ -14,8 +14,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-B5JsIhNV.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DMnsokPM.css">
+    <script>
+      // Redirect otomatis jika diakses dari GitHub Pages root branch main
+      if (window.location.hostname.endsWith('github.io') && !window.location.pathname.includes('/docs')) {
+        var target = window.location.pathname.replace(/\/?$/, '/docs/');
+        window.location.replace(target + window.location.search + window.location.hash);
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-iZE2PWFU.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D9_2lo16.css">
   </head>
   <body class="bg-slate-900 text-slate-100 antialiased selection:bg-amber-500/30 selection:text-amber-200">
     <div id="root"></div>
