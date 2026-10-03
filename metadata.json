@@ -1,0 +1,6 @@
+{
+  "name": "Teka-Teki Silang VCT PPKn",
+  "description": "Game edukasi Teka-Teki Silang interaktif berbasis buku Value Clarification Technique (VCT) dalam Pembelajaran PPKn Berbasis Nilai. Lengkap dengan 10 tipe level, logika pemain reflektif, dan saran pedagogis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
